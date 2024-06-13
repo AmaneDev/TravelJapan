@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appky - Travel Japan! 日本旅行 !</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./res/icons/jap_favicon.png">
+    <link rel="stylesheet" href="pageAplikace_style.css">
+    <link>
+</head>
+<body>
+    <script src="./script.js"></script>
+    <div class="topNav" id="navbar">
+        <div class="agentureSign">
+			<div class="buttons goBackBtnNavbar">   <!--vnoření buttons do agentureSign z toho duvodu ze agentureSign je do leva zarovnan space-betwenem, tak jen pro udržení formulace ...-->
+                <a href="./index.html" class="navButtons">
+                    <img src="./res/icons/Page_Letenky/navbar/previous-arrows-svgrepo-com.svg" alt="">
+                </a>
+            </div>
+            <a href="./#">
+                <img src="./res/pics/Flag_of_Japan.svg">
+            </a>
+            <h1>Travel Japan!</h1>
+        </div>
+        </a>
+        <div class="buttons"> <!--navbar buttony-->
+            <a href="./letenky.html" class="navButtons hideNavButtonsRespo" id="navButtonsID">
+                <img src="./res/icons/navbar/airplane.png">
+                <p>Letenky</p>
+            </a>
+            <a href="./jr.html" class="navButtons hideNavButtonsRespo">
+                <img src="./res/icons/navbar/train.png">
+                <p>JR RailPass</p>
+            </a>
+            <a href="./apps.html" class="navButtons hideNavButtonsRespo navB_apps">
+                <img src="./res/icons/navbar/app.png">
+                <p>Doporučené Aplikace</p>
+            </a>
+        </div>     <!--buttony v hamMenu-->
+        <div class="hamburgerItemsSidebar" id="hamButtons">
+			<div class="navButtons hamIcon goBackBtnBurger">   <!--vnoření buttons do agentureSign z toho duvodu ze agentureSign je do leva zarovnan space-betwenem, tak jen pro udržení formulace ...-->
+                <a href="./index.html">
+                    <img src="./res/icons/Page_Letenky/navbar/previous-arrows-svgrepo-com.svg" alt="">
+                </a>
+			</div>	
+            <a class="hamIcon closeHamIcon navButtons" onclick="closeHamburgerSidebar()">
+                <img src="./res/icons/menu_close.svg" alt="">
+            </a>
+            <a href="./letenky.html" class="navButtons">
+                <img src="./res/icons/navbar/airplane.png">
+                <p>Letenky</p>
+            </a>
+            <a href="./jr.html" class="navButtons">
+                <img src="./res/icons/navbar/train.png">
+                <p>JR RailPass</p>
+            </a>
+            <a href="./apps.html" class="navButtons navB_apps">
+                <img src="./res/icons/navbar/app.png">
+                <p>Doporučené Aplikace</p>
+            </a>
+        </div>
+        <a href="javascript:void(0);" class="hamIcon navButtons" onclick="openHamburgerSidebar()" id="hamIconHide">
+            <img src="./res/icons/navbar/Hamburger_icon.svg" alt="">
+        </a>
+    </div>
+    <section class="section1">
+        <div class="S1_appContainer">
+            <div class="appCard">
+                <img src="res/icons/page_Apps/gmaps.png" alt="">
+                <div class="appCardText">
+                    <hr>
+                    <h2>Google Maps</h2>
+                    <p>Navigační aplikace</p>
+                </div>
+                <div class="S1Button" onclick="openMoreinfo_GMAPS()">
+                    <img src="./res/icons/page_Apps/infoIcon.svg" alt="">
+                    <p>Více informací</p>
+                </div>
+            </div>    
+            <div class="appCard">
+                <img src="./res/icons/page_Apps/DeepL_logo_square.png" alt="">
+                <div class="appCardText">
+                    <hr>
+                    <h2>DeepL</h2>
+                    <p>Překladač</p>
+                </div>
+                <div class="S1Button" onclick="openMoreinfo_DEEPL()">
+                    <img src="./res/icons/page_Apps/infoIcon.svg" alt="">
+                    <p>Více informací</p>
+                </div>
+            </div>
+            <div class="appCard">
+                <img src="./res/icons/page_Apps/hyperdia.png" alt="">
+                <div class="appCardText">
+                    <hr>
+                    <h2>Hyperdia</h2>
+                    <p>Jízdní řády a jízdenky</p>
+                </div>
+                <div class="S1Button" onclick="openMoreinfo_HYPERDIA()">
+                    <img src="./res/icons/page_Apps/infoIcon.svg" alt="">
+                    <p>Více informací</p>
+                </div>
+            </div>
+            <div class="appCard">
+                <img src="./res/icons/page_Apps/japanoffiapp.png" alt="">
+                <div class="appCardText">
+                    <hr>
+                    <h2>Japan Official Travel App</h2>
+                    <p>Cestovatelský rádce</p>
+                </div>
+                <div class="S1Button" onclick="openMoreinfo_JOTA()">
+                    <img src="./res/icons/page_Apps/infoIcon.svg" alt="">
+                    <p>Více informací</p>
+                </div>
+            </div>
+            <div class="appCard">
+                <img class="appCardImg" src="./res/icons/page_Apps/CR.webp" alt="">
+                <div class="appCardText">
+                    <hr>
+                    <h2>Crunchyroll</h2>
+                    <p>Videotéka</p>
+                </div>
+                <div class="S1Button" onclick="openMoreinfo_CR()">
+                    <img src="./res/icons/page_Apps/infoIcon.svg" alt="">
+                    <p>Více informací</p>
+                </div>
+            </div>
+        </div>    
+    </section>
+
+    <!--overlays-->
+    <div class="overlay_1_GMAPS overlay" id="overlay_GMAPS">
+        <img class="closeBtn" src="./res/icons/menu_close.svg" alt="" onclick="closeMoreinfo_GMAPS()">
+        <div class="overlayContent">
+            <div>
+                <img class="overlayPic" src="./res/pics/appsPage/gmaps.jpg" alt="">
+            </div>
+            <div class="overlayText">
+                <h1>Google Maps</h2>
+                <ul>
+                    <li>
+                        <p>Google Maps je navigační aplikace, která vám pomůže najít cestu k vašemu cíli. Aplikace je dostupná na všech platformách a je zdarma.</p>
+                    </li>
+                    <li><p>Je velmi oblíbená aplikace a je velmi užitečná pro cestování.</p></li>
+                </ul>
+                <div class="downloadBtns">
+                    <a class="navButtons" href="https://play.google.com/store/apps/details?id=com.google.android.apps.maps&hl=en_US">Stáhnout na Google Play</a>
+                    <a class="navButtons" href="https://apps.apple.com/us/app/google-maps/id585027354">Stáhnout na App Store</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay_1_GMAPS overlay" id="overlay_DeepL">
+        <img class="closeBtn" src="./res/icons/menu_close.svg" alt="" onclick="closeMoreinfo_DEEPL()">
+        <div class="overlayContent">
+            <div>
+                <img class="overlayPic" src="./res/pics/appsPage/deepl.png" alt="">
+            </div>
+            <div class="overlayText">
+                <h1>DeepL</h2>
+                <ul>
+                    <li>
+                        <p>DeepL je překladač, který vám pomůže přeložit text do jiného jazyka. Aplikace je dostupná na všech platformách a je zdarma.</p>
+                    </li>
+                    <li><p>Je velmi oblíbená aplikace a je velmi užitečná pro cestování.</p></li>
+                </ul>
+                <div class="downloadBtns">
+                    <a class="navButtons" href="https://play.google.com/store/apps/details?id=com.deepl.android.app&hl=en_US">Stáhnout na Google Play</a>   
+                    <a class="navButtons" href="https://apps.apple.com/us/app/deepl-translator/id1138289621">Stáhnout na App Store</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay_1_GMAPS overlay" id="overlay_HYPERDIA">
+        <img class="closeBtn" src="./res/icons/menu_close.svg" alt="" onclick="closeMoreinfo_HYPERDIA()">
+        <div class="overlayContent">
+            <div>
+                <img class="overlayPic" src="./res/pics/appsPage/hyperdia.jpeg" alt="">
+            </div>
+            <div class="overlayText">
+                <h1>Hyperdia</h2>
+                <ul>
+                    <li>
+                        <p>Hyperdia je aplikace, která vám pomůže najít jízdní řády a jízdenky na veřejnou dopravu v Japonsku. Aplikace je dostupná na všech platformách a je zdarma.</p>
+                    </li>
+                    <li><p>Je velmi oblíbená aplikace a je velmi užitečná pro cestování.</p></li>
+                </ul>
+                <div class="downloadBtns">
+                    <a class="navButtons" href="https://play.google.com/store/apps/details?id=com.hyperdia.android&hl=en_US">Stáhnout na Google Play</a>
+                    <a class="navButtons" href="https://apps.apple.com/us/app/hyperdia-by-voice/id1163667352">Stáhnout na App Store</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay_1_JOTA overlay" id="overlay_JOTA">
+        <img class="closeBtn" src="./res/icons/menu_close.svg" alt="" onclick="closeMoreinfo_JOTA()">
+        <div class="overlayContent">
+            <div>
+                <img class="overlayPic" src="./res/pics/appsPage/JapanOfficialTravelApp.png" alt="">
+            </div>
+            <div class="overlayText">
+                <h1>Japan Official Travel App</h2>
+                <ul>
+                    <li>
+                        <p>Japan Official Travel App je cestovatelský rádce, který vám pomůže najít zajímavá místa a akce v Japonsku. Aplikace je dostupná na všech platformách a je zdarma.</p>
+                    </li>
+                    <li><p>Je velmi oblíbená aplikace a je velmi užitečná pro cestování.</p></li>
+                </ul>
+                <div class="downloadBtns">
+                    <a class="navButtons" href="https://play.google.com/store/apps/details?id=jp.go.jnto.jota&hl=en_US">Stáhnout na Google Play</a>
+                    <a class="navButtons" href="https://apps.apple.com/us/app/japan-official-travel-app/id1450787943">Stáhnout na App Store</a>     
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay_1_CR overlay" id="overlay_CR">
+        <img class="closeBtn" src="./res/icons/menu_close.svg" alt="" onclick="closeMoreinfo_CR()">
+        <div class="overlayContent">
+            <div>
+                <img class="overlayPic" src="./res/pics/appsPage/CR.jpg" alt="">
+            </div>
+            <div class="overlayText">
+                <h1>Crunchyroll</h2>
+                <ul>
+                    <li>
+                        <p>Crunchyroll je videoplatforma, která vám umožní sledovat anime a drama seriály. Aplikace je dostupná na všech platformách a je zdarma.</p>
+                    </li>
+                    <li><p>V aplikaci kromě Anime najdete také Mangy z nichž některé jsou i zdarma!</p></li>
+                </ul>
+                <div class="downloadBtns">
+                    <a class="navButtons" href="https://play.google.com/store/apps/details?id=com.crunchyroll.crunchyroid&hl=en_US">Stáhnout na Google Play</a> 
+                    <a class="navButtons" href="https://apps.apple.com/us/app/crunchyroll/id329913454">Stáhnout na App Store</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

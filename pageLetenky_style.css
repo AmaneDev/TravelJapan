@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Freeman&display=swap');
+:root{
+    --whiteCol: white;
+    --blackCol: black;
+    --bordRad5px: 5px;
+    --bordRad10px: 10px;
+    --bordRad30px: 30px;
+    --section2ButtonsShadow:rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    --section2TilesShadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    --footerButtonsShadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    --White_Acrylic_Webkit_backdrop_filter: blur(10px) saturate(180%);
+    --White_Acrylic_backdrop_filter: blur(10px) saturate(180%);
+    --White_Acrylic_background_color: rgba(255,255,255,.5);
+    --fontSizeFooter: 1.4rem;
+    --fontSize_Nadpisy_Footer_respons: 3rem;
+    --fontSize_NadpisySection3: 1.6rem;
+    --fontSize_NadpisySection2: 2.6rem;
+    --fontSize_NadpisySection2_mobile: 1.1rem;
+    --fontSize_Podnadpisy: 1.4rem;
+    --fontSize_Podnadpisy_smaller: 1rem;
+    --blur: 16px;
+    --size: clamp(300px, 50vmin, 600px);
+    --White_Acrylic_backgrop_filter2_buttons: blur(calc(var(--blur) * 0.5));
+    --White_Acrylic_background_color2_buttons: hsl(0 0% 100% / 0.5);
+    --grayCol: gray;
+    --redCol: red;
+    --fontWeight600_NumbersS2: 600;
+    --fontSize_Numbers: 4em;
+    --fontSize_NumbersMobile: 3em;
+    --hoverScaleLower: 1.1;
+    --hoverTransition: .2s ease-in;
+
+}
+body{
+    min-height: 100vh;
+    font-family: "Freeman", arial;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 400px;
+}
+a{
+    text-decoration: none; /* zbavení se podtržení */
+}
+button{
+    text-decoration: none;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+}
+.topNav{
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    position: fixed;
+    transition: 0.3s;
+    padding: .6rem;
+    top: 5rem;
+    width: 80%;
+    height: 8%;
+    background-color: var(--whiteCol);
+    border-radius: var(--bordRad5px);
+    opacity: 100%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.agentureSign{
+    display: flex;
+    align-items: center;
+    line-height: 1.8rem;
+}
+.goBackBtnNavbar{
+    height: 3rem;
+}
+.topNav img{
+    width: 100px;
+    height: 65px;
+}
+.buttons{
+    display:flex;
+    justify-content: center;
+    /*transition: transform 0.3s ease;*/
+}
+.navButtons{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .1rem 1.1rem .1rem 1.1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    margin: 0 1rem 0 1rem;
+    border-radius: var(--bordRad10px);
+    color: var(--blackCol);   /*později je pouzivana modra barva pro <a> ... zde je fixne cerna aby ji nic neprepsalo*/
+}
+.hamburgerItemsSidebar{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-color: var(--White_Acrylic_background_color);
+    box-shadow: var(--footerButtonsShadow);
+    backdrop-filter: var(--White_Acrylic_backgrop_filter2_buttons);
+    row-gap: 1rem;
+    display: none;
+}
+.hamburgerItemsSidebar a{
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.hamIcon{
+    cursor: pointer;
+}
+#hamIconHide{  /*zvyseni priority pres ID, skryti tlacitka za normalnich okolnosti*/
+    display:none;
+}
+.hamburgerItemsSidebar .closeHamIcon{
+    width:8%;
+    height: 6%;
+}
+.navB_letenky{
+    text-decoration: underline;
+}
+.navbuttons:active{
+    transform: scale(0.9);
+}
+.navButtons:not(:active) {
+    animation: bounceBack 0.5s forwards;
+}
+@keyframes bounceBack {
+    0% { transform: scale(0.9); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1.0); }
+}
+.navButtons img{
+    width: 40px;
+    height: 30px;
+}
+.navButtons:hover{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.goBackBtnBurger{
+    width: 8%;
+}
+
+/*sekce 1*/
+.buyTickets1{
+    display: flex;
+    justify-content: space-between;
+    margin: 15rem 0 0 0;
+    box-shadow: var(--section2TilesShadow);
+    border-radius: var(--bordRad10px);
+    padding: 2rem;
+}
+.S1RightPic{
+    width: 15rem;
+    border-radius: var(--bordRad10px);
+}
+.S1leftText{
+    margin: 0 2rem 0 0;
+    display: flex;
+    flex-direction: column;
+}
+.S1leftText img{
+    width: 5rem;
+}
+.S1leftText h1{
+    line-height: .3rem;
+}
+.S1leftText p{
+    line-height: 3rem;
+}
+.S1leftBtn{
+    height: 20%;
+}
+.S1leftText a{
+    margin: auto;
+}
+
+
+/*sekce2*/
+.Warning2{
+    margin: 1rem 0 0 0;
+    box-shadow: var(--section2TilesShadow);
+    border-radius: var(--bordRad10px);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+.Warning2 h1{
+    align-self: center;
+    font-size: var(--fontSize_NadpisySection2);
+}
+.S2_Warning_container{
+    display: grid;
+    gap: 2rem;
+    padding: 4rem 8rem 4rem 4rem;
+    grid-template: repeat(2,1fr)/repeat(3,1fr);
+}
+.S2_Warning_element{
+    padding: 2rem;
+    box-shadow: var(--section2TilesShadow);
+    border-radius: var(--bordRad10px);
+}
+.S2_Warning_element:hover{
+    transform: scale(var(--hoverScaleLower));
+    transition: var(--hoverTransition);
+}
+.S2_Warning_element h1{
+    color: var(--redCol);
+    font-weight: var(--fontWeight600_NumbersS2);
+    font-size: var(--fontSize_Numbers);
+}  
+.S2_textHighlight{
+    color: var(--redCol);
+}
+.S2_bgIcons{
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: top 1rem right 0.9rem;
+}
+.S2_1{
+    background-image: url(./res/icons/Page_Letenky/section2/warningIcons/1.svg);
+}
+.S2_2{
+    background-image: url(./res/icons/Page_Letenky/section2/warningIcons/2.svg);
+}
+.S2_3{
+    background-image: url(./res/icons/Page_Letenky/section2/warningIcons/3.svg);
+}
+.S2_4{
+    background-image: url(./res/icons/Page_Letenky/section2/warningIcons/4.svg);
+}
+.S2_5{
+    background-image: url(./res/icons/Page_Letenky/section2/warningIcons/5.svg);
+}
+.S2_6{
+    background-image: url(./res/icons/Page_Letenky/section2/warningIcons/6.svg);
+}
+
+@media screen and (max-width: 1000px) {
+    /*Hamburger menu*/
+    .buttons{
+        flex-direction: column;
+        display: block;
+    }
+    .hideNavButtonsRespo{
+        display: none;
+    }
+    #hamIconHide{
+        display:block;
+    }
+    .goBackBtnNavbar{
+        display: none;
+    }
+    .goBackBtnBurger{
+        display: block;
+    }
+    
+    /*responzivita pro section1 (videobg)*/
+    .videoCard{
+        right: 0;
+        height: 23rem;
+        max-width: 18.5rem;
+        row-gap: 0;
+    }
+    .arrowImageVideoCardWrapper img{
+        width: 70%;
+        height: 90%
+    }
+
+    /*sekce1*/
+    .buyTickets1{
+        flex-direction: column;
+    }
+    .S1RightPic{
+        width: 100%;
+        margin: 3rem 0 0 0;
+    }
+
+    /*sekce 2*/
+    .Warning2{
+        margin: 1.5rem;
+    }
+    .S2_Warning_container{
+        display:flex;
+        flex-direction: column;
+        padding: 0;
+    }
+    .Warning2 h1{
+        margin: 0 0 2rem 0;
+        font-size: var(--fontSize_NadpisySection2_mobile);
+    }
+    .S2_Warning_element p{
+        max-width: 70%; /*aby popisek nezasahoval do bg img warning containeru*/
+    }  
+    .S2_Warning_element h1{
+        font-size: var(--fontSize_NumbersMobile);
+    }  
+    
+}    

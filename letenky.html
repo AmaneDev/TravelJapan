@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letenky - Travel Japan! 日本旅行 !</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./res/icons/jap_favicon.png">
+    <link rel="stylesheet" href="pageLetenky_style.css">
+    <link>
+</head>
+<body>
+    <script src="./script.js"></script>
+    <div class="topNav" id="navbar">
+        <div class="agentureSign">
+            <div class="buttons goBackBtnNavbar">   <!--vnoření buttons do agentureSign z toho duvodu ze agentureSign je do leva zarovnan space-betwenem, tak jen pro udržení formulace ...-->
+                <a href="./index.html" class="navButtons">
+                    <img src="./res/icons/Page_Letenky/navbar/previous-arrows-svgrepo-com.svg" alt="">
+                </a>
+            </div>
+            <a href="./#">
+                <img src="./res/pics/Flag_of_Japan.svg">
+            </a>
+            <h1>Travel Japan!</h1>
+        </div>
+        </a>
+        <div class="buttons"> <!--navbar buttony-->
+            <a href="./letenky.html" class="navButtons hideNavButtonsRespo navB_letenky" id="navButtonsID">
+                <img src="./res/icons/navbar/airplane.png">
+                <p>Letenky</p>
+            </a>
+            <a href="./jr.html" class="navButtons hideNavButtonsRespo">
+                <img src="./res/icons/navbar/train.png">
+                <p>JR RailPass</p>
+            </a>
+            <a href="./apps.html" class="navButtons hideNavButtonsRespo">
+                <img src="./res/icons/navbar/app.png">
+                <p>Doporučené Aplikace</p>
+            </a>
+        </div>     <!--buttony v hamMenu-->
+        <div class="hamburgerItemsSidebar" id="hamButtons">
+            <div class="navButtons hamIcon goBackBtnBurger">   <!--vnoření buttons do agentureSign z toho duvodu ze agentureSign je do leva zarovnan space-betwenem, tak jen pro udržení formulace ...-->
+                <a href="./index.html">
+                    <img src="./res/icons/Page_Letenky/navbar/previous-arrows-svgrepo-com.svg" alt="">
+                </a>
+            </div>
+            <a class="hamIcon closeHamIcon navButtons" onclick="closeHamburgerSidebar()">
+                <img src="./res/icons/menu_close.svg" alt="">
+            </a>
+            <a href="./letenky.html" class="navButtons navB_letenky">
+                <img src="./res/icons/navbar/airplane.png">
+                <p>Letenky</p>
+            </a>
+            <a href="./jr.html" class="navButtons">
+                <img src="./res/icons/navbar/train.png">
+                <p>JR RailPass</p>
+            </a>
+            <a href="./apps.html" class="navButtons">
+                <img src="./res/icons/navbar/app.png">
+                <p>Doporučené Aplikace</p>
+            </a>
+        </div>
+        <a href="javascript:void(0);" class="hamIcon navButtons" onclick="openHamburgerSidebar()" id="hamIconHide">
+            <img src="./res/icons/navbar/Hamburger_icon.svg" alt="">
+        </a>
+    </div>
+    <section class="buyTickets1">
+        <div class="S1leftText">
+            <img src="./res/icons/navbar/airplane.png" alt="">
+            <h1>Vydejte se na let do Japonska!</h1>
+            <p>Nejlevnější letenky můžete najít na portále Kiwi.com</p>
+            <a class="navButtons" href="https://www.kiwi.com/cz/?origin=--&destination=japonsko&lang=cs&utm_source=google&utm_medium=cpc&mkt_form=acquisition&mkt_agency=adwordssearch&affilid=acquisition000performance000sem000generic&mkt_origin=&si=&mkwid=s-dc_pcrid_634137563941_pkw_japonsko+letenka_pmt_b_slid__&pgrid=146975037247&ptaid=kwd-297336704138&utm_campaign=18862809754&paid_traffic_source=1&gad_source=1&gclid=CjwKCAjwyJqzBhBaEiwAWDRJVLZnKVu_O3pl23leuwxaBgxeYHokGSFnbpwt59BKdMS32lwoiZyewxoCY5sQAvD_BwE&gclsrc=aw.ds">Zakoupit letenky</a>
+        </div>
+        <img class="S1RightPic" src="./res/pics/LetenkyPage/japan_airlines_boeing_777-200pix.webp" alt="">
+    </section>
+    <section class="Warning2">
+        <h1>Před odletem do Japonska je nutné mít na paměti tamní <a class="S2_textHighlight">zásady a zvyky!</a></h1>
+        <div class="S2_Warning_container">
+            <div class="S2_Warning_element S2_1 S2_bgIcons">
+                <h1>1.</h1>
+                <h2>Nerušte!</h2>
+                <p>V Japonsku je velmi nezdvořilé, především v dopravních prostředcích být hlučný. Navíc za to můžete schytat pěknou pokutu...</p>
+            </div>
+            <div class="S2_Warning_element S2_2 S2_bgIcons">
+                <h1>2.</h1>
+                <h2>Udržujte pořádek!</h2>
+                <p>Procházením Japonských ulic brzy zjistíte, že na koše ve veřejných prostorách jen tak nenarazíte, proto se připravte uchovávat zbytky sebou ...</p>
+            </div>
+            <div class="S2_Warning_element S2_3 S2_bgIcons">
+                <h1>3.</h1>
+                <h2>Recyklujte!</h2>
+                <p>Oproti evropě jsou na to Japonci obecně velice hákliví a za nerecyklování můžete dostat pokutu!</p>
+            </div>
+            <div class="S2_Warning_element S2_4 S2_bgIcons">
+                <h1>4.</h1>
+                <h2>Zdraví se úklonem!</h2>
+                <p>Evropské podání si rukou jako slušné v japonsku nečekejte! Právě naopak, Japonci se uklánějí přičemž existují 4 úrovně uklonění a pokud neznáte Japonskou etiketu velice dobře, ukloňte se nejvíc.</p>
+            </div>
+            <div class="S2_Warning_element S2_5 S2_bgIcons">
+                <h1>5.</h1>
+                <h2>Žádné tetování!</h2>
+                <p>Tetování je zde kvůli historickému pojítku s Jakuzou velice tabuizované a na veřejných prostorách, například v termálech známých jako Onseny, protizákonné a velice neetické!</p>
+            </div>
+            <div class="S2_Warning_element S2_6 S2_bgIcons">
+                <h1>6.</h1>
+                <h2>Zákaz vyvážení!</h2>
+                <p>Je zakázáno vyvážet vše, co je považováno za kulturní památky jako např. Samurajské meče, starožitnosti apod.</p>
+            </div>
+            
+        </div>
+    </section>
+</body>

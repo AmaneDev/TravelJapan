@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Freeman&display=swap');
+:root{
+    --whiteCol: white;
+    --blackCol: black;
+    --bordRad5px: 5px;
+    --bordRad10px: 10px;
+    --bordRad30px: 30px;
+    --section2ButtonsShadow:rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    --section2TilesShadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    --footerButtonsShadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    --White_Acrylic_Webkit_backdrop_filter: blur(10px) saturate(180%);
+    --White_Acrylic_backdrop_filter: blur(10px) saturate(180%);
+    --White_Acrylic_background_color: rgba(255,255,255,.5);
+    --fontSizeFooter: 1.4rem;
+    --fontSize_Nadpisy_h1: 2rem;
+    --fontSize_Nadpisy_Footer_respons: 3rem;
+    --fontSize_NadpisySection3: 1.6rem;
+    --fontSize_Podnadpisy: 1.4rem;
+    --fontSize_Podnadpisy_smaller: 1rem;
+    --blur: 16px;
+    --size: clamp(300px, 50vmin, 600px);
+    --White_Acrylic_backgrop_filter2_buttons: blur(calc(var(--blur) * 0.5));
+    --White_Acrylic_background_color2_buttons: hsl(0 0% 100% / 0.5);
+    --grayCol: gray;
+    --bgSectionGreenerCol: hex(#d9ece1);
+    --navBarLineHeight: 1.8rem;
+    --hoverScaleLower: 1.1;
+    --hoverTransition: .2s ease-in;
+}
+body{
+    min-height: 100vh;
+    font-family: "Freeman", arial;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 400px;
+    padding: 1.7rem;
+    text-align: center;
+}
+a{
+    text-decoration: none; /* zbavení se podtržení */
+}
+h1{
+    font-size: var(--fontSize_Nadpisy_h1);
+}
+.topNav{
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    position: fixed;
+    transition: 0.3s;
+    padding: .6rem;
+    top: 5rem;
+    width: 80%;
+    height: 8%;
+    background-color: var(--whiteCol);
+    border-radius: var(--bordRad5px);
+    opacity: 100%;
+    line-height: var(--navBarLineHeight);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.agentureSign{
+    display: flex;
+    align-items: center;
+    line-height: var(--navBarLineHeight);
+}
+.goBackBtnNavbar{
+    height: 3rem;
+}
+.topNav img{
+    width: 100px;
+    height: 65px;
+}
+.buttons{
+    display:flex;
+    justify-content: center;
+    /*transition: transform 0.3s ease;*/
+}
+.navButtons{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .1rem 1.1rem .1rem 1.1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    margin: 0 1rem 0 1rem;
+    border-radius: var(--bordRad10px);
+    color: var(--blackCol);   /*později je pouzivana modra barva pro <a> ... zde je fixne cerna aby ji nic neprepsalo*/
+}
+.hamburgerItemsSidebar{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-color: var(--White_Acrylic_background_color);
+    box-shadow: var(--footerButtonsShadow);
+    backdrop-filter: var(--White_Acrylic_backgrop_filter2_buttons);
+    row-gap: 1rem;
+    display: none;
+}
+.hamburgerItemsSidebar a{
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.hamIcon{
+    cursor: pointer;
+}
+#hamIconHide{  /*zvyseni priority pres ID, skryti tlacitka za normalnich okolnosti*/
+    display:none;
+}
+.hamburgerItemsSidebar .closeHamIcon{
+    width:8%;
+    height: 6%;
+}
+.navB_JR{
+    text-decoration: underline;
+}
+.navbuttons:active{
+    transform: scale(0.9);
+}
+.navButtons:not(:active) {
+    animation: bounceBack 0.5s forwards;
+}
+@keyframes bounceBack {
+    0% { transform: scale(0.9); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1.0); }
+}
+.navButtons img{
+    width: 40px;
+    height: 30px;
+}
+.navButtons:hover{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.goBackBtnBurger{
+    width: 8%;
+}
+
+/*section1 (shinkansen)*/
+.section1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.section1 img{
+    margin: 3rem 0 0 0;
+    border-radius: var(--bordRad10px);
+    width: 90%;
+    object-fit: cover;
+    height: 30rem;
+}
+
+/*section2 (co je to JR RP*/
+.S2_WhatRailPass{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin: 3rem 0rem 3rem 0;
+}
+.section2{
+    line-height: .2rem;
+}
+.section2 p{
+    color: var(--grayCol);
+}
+
+/*section3*/
+.section3Header{
+    margin: 2rem 0 0 0;
+}
+.section3{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding:3rem;
+}
+.section3_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: var(--bordRad10px);
+    background-color: var(--whiteCol);
+    box-shadow: var(--section2TilesShadow);
+    padding: 4rem;
+    margin: 2rem;
+}
+.section3_box:hover{
+    scale: var(--hoverScaleLower);
+    transition: var(--hoverTransition);
+}
+.section3_box img{
+    width: 5rem;
+}
+.section3_box h1{
+    font-size: var(--fontSize_Podnadpisy);
+}
+/*section4*/
+.S4_boxes_wrapper{
+    display: flex;
+    justify-content: center;
+}
+.S4_boxes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.S4_boxes h1{
+    font-size: var(--fontSize_Podnadpisy);
+}
+.S4_boxes img{
+    width: 10rem;
+}
+
+@media screen and (max-width: 1000px) {
+    /*Hamburger menu*/
+    .buttons{
+        flex-direction: column;
+        display: block;
+    }
+    .hideNavButtonsRespo{
+        display: none;
+    }
+    #hamIconHide{
+        display:block;
+    }
+	.goBackBtnNavbar{
+        display: none;
+    }
+    .goBackBtnBurger{
+        display: block;
+    }
+    
+    /*responzivita pro section1 (videobg)*/
+    .videoCard{
+        right: 0;
+        height: 23rem;
+        max-width: 18.5rem;
+    }
+    .arrowImageVideoCardWrapper img{
+        width: 70%;
+        height: 90%
+    }
+    /*section1*/
+    .section1 img{
+        height: 20rem;
+    }
+    /*section2*/
+    .S2_WhatRailPass{
+        flex-direction: column;
+    }
+    /*section3*/
+    .section3{
+        flex-direction: column;
+    }
+    /*section4*/
+    .S4_boxes_wrapper{
+        flex-direction: column;
+    }
+}    

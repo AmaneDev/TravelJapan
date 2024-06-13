@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Freeman&display=swap');
+:root{
+    --whiteCol: white;
+    --blackCol: black;
+    --bordRad5px: 5px;
+    --bordRad10px: 10px;
+    --bordRad30px: 30px;
+    --section2ButtonsShadow:rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    --section2TilesShadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    --footerButtonsShadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    --White_Acrylic_Webkit_backdrop_filter: blur(10px) saturate(180%);
+    --White_Acrylic_backdrop_filter: blur(10px) saturate(180%);
+    --White_Acrylic_background_color: rgba(255,255,255,.5);
+    --fontSizeFooter: 1.4rem;
+    --fontSize_Nadpisy_Footer_respons: 3rem;
+    --fontSize_NadpisySection3: 1.6rem;
+    --fontSize_Podnadpisy: 1.4rem;
+    --fontSize_Podnadpisy_smaller: 1rem;
+    --fontSize_Nadpisy_S1_tiles: .8rem;
+    --blur: 16px;
+    --size: clamp(300px, 50vmin, 600px);
+    --White_Acrylic_backgrop_filter2_buttons: blur(calc(var(--blur) * 0.5));
+    --White_Acrylic_background_color2_buttons: hsl(0 0% 100% / 0.5);
+    --grayCol: gray;
+    --darkedBgCol: rgba(0, 0, 0, 0.8);
+    --paddingInsideTileMobile: 1.5rem;
+    --defaultGap: 1rem;
+    --BigGap: 2rem;
+    --LittleGap: .5rem;
+    --hoverScale: 1.2;
+    --hoverTransition: .2s ease-in;
+}
+body{
+    min-height: 100vh;
+    font-family: "Freeman", arial;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 400px;
+    background-image: url(./res/pics/appsPage/shrineBgImg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+a{
+    text-decoration: none; /* zbavení se podtržení */
+}
+.topNav{
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--defaultGap);
+    align-items: center;
+    position: fixed;
+    transition: 0.3s;
+    padding: .6rem;
+    top: 5rem;
+    width: 80%;
+    height: 8%;
+    background-color: var(--whiteCol);
+    border-radius: var(--bordRad5px);
+    opacity: 100%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.agentureSign{
+    display: flex;
+    align-items: center;
+    line-height: 1.8rem;
+}
+.goBackBtnNavbar{
+    height: 3rem;
+}
+.topNav img{
+    width: 100px;
+    height: 65px;
+}
+.buttons{
+    display:flex;
+    justify-content: center;
+    /*transition: transform 0.3s ease;*/
+}
+.navButtons{
+    display: flex;
+    align-items: center;
+    gap: var(--LittleGap);
+    padding: .1rem 1.1rem .1rem 1.1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    margin: 0 1rem 0 1rem;
+    border-radius: var(--bordRad10px);
+    color: var(--blackCol);   /*později je pouzivana modra barva pro <a> ... zde je fixne cerna aby ji nic neprepsalo*/
+}
+.hamburgerItemsSidebar{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 2;
+    background-color: var(--White_Acrylic_background_color);
+    box-shadow: var(--footerButtonsShadow);
+    backdrop-filter: var(--White_Acrylic_backgrop_filter2_buttons);
+    row-gap: var(--defaultGap);
+    display: none;
+}
+.hamburgerItemsSidebar a{
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.hamIcon{
+    cursor: pointer;
+}
+#hamIconHide{  /*zvyseni priority pres ID, skryti tlacitka za normalnich okolnosti*/
+    display:none;
+}
+.hamburgerItemsSidebar .closeHamIcon{
+    width:8%;
+    height: 6%;
+}
+.navB_apps{
+    text-decoration: underline;
+}
+.navbuttons:active{
+    transform: scale(0.9);
+}
+.navButtons:not(:active) {
+    animation: bounceBack 0.5s forwards;
+}
+@keyframes bounceBack {
+    0% { transform: scale(0.9); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1.0); }
+}
+.navButtons img{
+    width: 40px;
+    height: 30px;
+}
+.navButtons:hover{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.goBackBtnBurger{
+    width: 8%;
+}
+
+/*section1*/
+.section1{
+    display: flex;
+    padding: 4rem;
+    margin: 15rem 0 0 0;
+    
+}
+.S1_appContainer{
+    display: flex;
+    gap: var(--BigGap);
+    align-items: stretch;
+    justify-content: center;
+    
+}
+.appCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-evenly;
+    gap: var(--defaultGap);
+    width: 10%;
+    padding: 1rem;
+    border-radius: var(--bordRad10px);
+    background-color: var(--whiteCol);
+    box-shadow: var(--section2ButtonsShadow);
+    backdrop-filter: var(--White_Acrylic_Webkit_backdrop_filter);
+}
+.appCard:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transform: scale(var(--hoverScale));
+    transition: var(--hoverTransition);
+}
+.appCardText{
+    font-size: var(--fontSize_Nadpisy_S1_tiles);
+}
+.appCard img{
+    width: 50%;
+    object-fit:scale-down;
+    height: 40%;
+}
+.S1_appFooterContainer{
+    display: flex;
+    gap: var(--defaultGap);
+    padding: 1rem;
+    box-shadow: var(--section2ButtonsShadow);
+    border-radius: var(--bordRad10px);
+    backdrop-filter: var(--White_Acrylic_backgrop_filter2_buttons);
+    background-color: #00ff00;
+    width: 100%;
+}
+.S1Button{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+    box-shadow: var(--section2ButtonsShadow);
+    border-radius: var(--bordRad10px);
+    align-items: center;
+    gap: var(--defaultGap);
+    cursor: pointer;
+}
+.S1Button img{
+    width: 30px;
+    height: 30px;
+}
+.S1Button:active{
+    transform: scale(0.9);
+}
+.S1Button:not(:active) {
+    animation: bounceBack 0.5s forwards;
+}
+
+/*overlaye*/
+.overlay_1_GMAPS{
+    display: none;  /*u vsech disp:none propertie kvuli JS () ktera values prepisuje z none na block*/
+}
+.overlay_1_DeepL{
+    display: none;
+}
+.overlay_1_HYPERDIA{
+    display: none;
+}
+.overlay_1_JOTA{
+    display: none;
+}
+.overlay_1_CR{
+    display: none;
+}
+.overlay{
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: var(--darkedBgCol);
+    backdrop-filter: var(--White_Acrylic_backdrop_filter);
+    z-index: 3;
+    padding: 10rem;
+}
+.overlayContent{
+    display: flex;
+    align-items: center;
+    gap: var(--defaultGap);
+    padding: 5rem;
+    background-color: var(--whiteCol);
+    border-radius: var(--bordRad10px);
+}
+.overlayPic{
+    display: flex;
+    align-items: center;
+    gap: var(--defaultGap);
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    border-radius: var(--bordRad10px);
+}
+.closeBtn{
+    background-color: var(--whiteCol);
+    border-radius: var(--bordRad10px);
+    padding: 2rem;
+    top: 5rem;
+    width: 2rem;
+    cursor: pointer;
+}
+.closeBtn:active{
+    transform: scale(0.9);
+}
+.closeBtn:not(:active) {
+    animation: bounceBack 0.5s forwards;
+}
+.downloadBtns{
+    display: flex;
+    gap: var(--BigGap);
+}
+
+@media screen and (max-width: 1000px) {
+    /*Hamburger menu*/
+    .buttons{
+        flex-direction: column;
+        display: block;
+    }
+    .hideNavButtonsRespo{
+        display: none;
+    }
+    #hamIconHide{
+        display:block;
+    }
+	.goBackBtnNavbar{
+        display: none;
+    }
+    .goBackBtnBurger{
+        display: block;
+    }
+    
+    /*responzivita pro videobg*/
+    .videoCard{
+        right: 0;
+        height: 23rem;
+        max-width: 18.5rem;
+        row-gap: 0;
+    }
+    .arrowImageVideoCardWrapper img{
+        width: 70%;
+        height: 90%
+    }
+    /*respo pro Section1 (cards)*/
+    .S1_appContainer{
+        flex-direction: column;
+        gap: var(--BigGap);
+        align-items: center;
+    }
+    .appCard{
+        width: 80%;
+    }
+
+    /*overlay*/
+
+    .overlayContent{
+        flex-direction: column;
+        padding: var(--paddingInsideTileMobile);
+    }
+}    

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JR Pass - Travel Japan! 日本旅行 !</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./res/icons/jap_favicon.png">
+    <link rel="stylesheet" href="pageJR_style.css">
+    <link>
+</head>
+<body>
+    <script src="./script.js"></script>
+    <div class="topNav" id="navbar">
+        <div class="agentureSign">
+			<div class="buttons goBackBtnNavbar">   <!--vnoření buttons do agentureSign z toho duvodu ze agentureSign je do leva zarovnan space-betwenem, tak jen pro udržení formulace ...-->
+                <a href="./index.html" class="navButtons">
+                    <img src="./res/icons/Page_Letenky/navbar/previous-arrows-svgrepo-com.svg" alt="">
+                </a>
+            </div>
+            <a href="./#">
+                <img src="./res/pics/Flag_of_Japan.svg">
+            </a>
+            <h1>Travel Japan!</h1>
+        </div>
+        </a>
+        <div class="buttons"> <!--navbar buttony-->
+            <a href="./letenky.html" class="navButtons hideNavButtonsRespo" id="navButtonsID">
+                <img src="./res/icons/navbar/airplane.png">
+                <p>Letenky</p>
+            </a>
+            <a href="./jr.html" class="navButtons hideNavButtonsRespo navB_JR">
+                <img src="./res/icons/navbar/train.png">
+                <p>JR RailPass</p>
+            </a>
+            <a href="./apps.html" class="navButtons hideNavButtonsRespo">
+                <img src="./res/icons/navbar/app.png">
+                <p>Doporučené Aplikace</p>
+            </a>
+        </div>     <!--buttony v hamMenu-->
+        <div class="hamburgerItemsSidebar" id="hamButtons">
+			<div class="navButtons hamIcon goBackBtnBurger">   <!--vnoření buttons do agentureSign z toho duvodu ze agentureSign je do leva zarovnan space-betwenem, tak jen pro udržení formulace ...-->
+                <a href="./index.html">
+                    <img src="./res/icons/Page_Letenky/navbar/previous-arrows-svgrepo-com.svg" alt="">
+                </a>
+            </div>
+            <a class="hamIcon closeHamIcon navButtons" onclick="closeHamburgerSidebar()">
+                <img src="./res/icons/menu_close.svg" alt="">
+            </a>
+            <a href="./letenky.html" class="navButtons">
+                <img src="./res/icons/navbar/airplane.png">
+                <p>Letenky</p>
+            </a>
+            <a href="./jr.html" class="navButtons navB_JR">
+                <img src="./res/icons/navbar/train.png">
+                <p>JR RailPass</p>
+            </a>
+            <a href="./apps.html" class="navButtons">
+                <img src="./res/icons/navbar/app.png">
+                <p>Doporučené Aplikace</p>
+            </a>
+        </div>
+        <a href="javascript:void(0);" class="hamIcon navButtons" onclick="openHamburgerSidebar()" id="hamIconHide">
+            <img src="./res/icons/navbar/Hamburger_icon.svg" alt="">
+        </a>
+    </div>
+    <section class="section1">
+        <img src="./res/pics/jrPage/Shinkansen_fuji.jpg">
+        <h1>Svezte se nejen pohodlnými rychlovlaky Shinkansen 新幹線</h1>
+    </section>
+    <section class="section2">
+        <p>Co je to Japanese Railways PASS?</p>
+        <div class="S2_WhatRailPass">
+            <div>
+                <img src="./res/pics/jrPage/1.png">
+                <h2>Předplacená časová jízdenka</h2>
+            </div>
+            <div>
+                <img src="./res/pics/jrPage/2.png">
+                <h2>Platná i ve rychlovlacích</h2>
+            </div>
+            <div>
+                <img src="./res/pics/jrPage/3.png">
+                <h2>Místenky jsou zdarma</h2>
+            </div>
+            <div>
+                <img src="./res/pics/jrPage/4.png">
+                <h2>Levnější jak jednosměrné</h2>
+            </div>
+        </div>
+    </section>
+    <h1 class="section3Header">Dále mimo jiné JR poskytují:</h1>
+    <section class="section3">
+        <div class="section3_box">
+            <img src="./res/icons/Page_JR/3_1.svg">
+            <h1>Přenosná WiFi</h1>
+            <p>Jedete do Japonska na dovolenou a nechcete platit za roaming? Máme řešní!</p>
+            <a class="navButtons" href="https://www.jrpass.com/pocket-wifi">Zjistit více</a> 
+        </div>
+        <div class="section3_box">
+            <img src="./res/icons/Page_JR/3_2.svg">
+            <h1>Regionální pasy</h1>
+            <p>Neplánujete projet celé Japonsko? Nevadí! O to víc ušetříte volbou regionů!</p>
+            <a class="navButtons" href="https://www.jrpass.com/regional-passes">Zjistit více</a>  
+        </div>
+    </section>
+    <section>
+        <h1>Jak si JR Pass zakoupit?</h1>
+        <div class="section4_HowToBuy"> 
+        <div class="S4_boxes_wrapper">
+            <div class="S4_boxes section3_box">
+                <img src="./res/icons/Page_JR/4_2_int.svg">
+                <h1>Na internetu</h1>
+                <a class="navButtons" href="https://www.jrpass.com/">Online zde</a>  
+            </div>
+            <div class="S4_boxes section3_box">
+                <img src="./res/icons/Page_JR/4_3_agent.svg">
+                <h1>V cestovní kanceláři</h1>
+                <a class="navButtons" href="https://www.jrpass.com/">Kanceláře</a>  
+            </div>
+            <div class="S4_boxes section3_box">
+                <img src="./res/icons/Page_JR/4_4_airport.svg">
+                <h1>Na letišti</h1>
+                <a class="navButtons" href="https://www.narita-airport.jp/ja/map/?bearing=59.5&zoom=14.5&pitch=0&lat=35.77379044106&lng=140.38857327726998">Letiště Haneda, Tokyo</a>  
+            </div>
+        </div>  
+    </section>
+</body>

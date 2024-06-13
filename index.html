@@ -1,0 +1,344 @@
+<!--Ročníkovka na téma Japonsko-->
+<!--Napsal Michal Polýnek (AmaneDev)-->
+<!--Některé JS funkce pro responzivitu mohou zafungovat při přepnutí do jiného rozlišení po reloadu přes burger menu nebo až po refreshnutí v daném rozlišení-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Japan! 日本旅行 !</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./res/icons/jap_favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link>
+</head>
+
+<body>
+    <script src="./script.js"></script>  <!--inicializace JS-->
+    <div class="section1_bgHomeVid">
+        <video autoplay muted loop id="bgVideo">
+            <source src="https://video.wixstatic.com/video/7c6648_041f0aefe03f4b3d832063c611e70938/1080p/mp4/file.mp4"
+                type="video/mp4">
+        </video>
+        <div class="topNav" id="navbar">
+            <div class="agentureSign">
+                <a href="./#">
+                    <img src="./res/pics/Flag_of_Japan.svg">
+                </a>
+                <h1>Travel Japan!</h1>
+            </div>
+            </a>
+            <div class="buttons"> <!--navbar buttony-->
+                <a href="./letenky.html" class="navButtons hideNavButtonsRespo" id="navButtonsID">
+                    <img src="./res/icons/navbar/airplane.png">
+                    <p>Letenky</p>
+                </a>
+                <a href="./jr.html" class="navButtons hideNavButtonsRespo">
+                    <img src="./res/icons/navbar/train.png">
+                    <p>JR RailPass</p>
+                </a>
+                <a href="./apps.html" class="navButtons hideNavButtonsRespo">
+                    <img src="./res/icons/navbar/app.png">
+                    <p>Doporučené Aplikace</p>
+                </a>
+            </div>     <!--buttony v hamMenu-->
+            <div class="hamburgerItemsSidebar" id="hamButtons">
+                <a class="hamIcon closeHamIcon navButtons" onclick="closeHamburgerSidebar()">
+                    <img src="./res/icons/menu_close.svg" alt="">
+                </a>
+                <a href="./letenky.html" class="navButtons">
+                    <img src="./res/icons/navbar/airplane.png">
+                    <p>Letenky</p>
+                </a>
+                <a href="./jr.html" class="navButtons">
+                    <img src="./res/icons/navbar/train.png">
+                    <p>JR RailPass</p>
+                </a>
+                <a href="./apps.html" class="navButtons">
+                    <img src="./res/icons/navbar/app.png">
+                    <p>Doporučené Aplikace</p>
+                </a>
+            </div>
+            <a href="javascript:void(0);" class="hamIcon navButtons" onclick="openHamburgerSidebar()" id="hamIconHide">
+                <img src="./res/icons/navbar/Hamburger_icon.svg" alt="">
+            </a>
+        </div>
+        <div class="videoCard">
+            <div class="vidCardTitle">
+                <div class="containerTextEmojiCard vidCardFirstImg" id="card1">
+                    <p>Ochutnejte ... </p>
+                    <img src="./res/icons/cards/card1/Microsoft-Fluentui-Emoji-3d-Face-Savoring-Food-3d.svg">
+                    <img src="./res/icons/cards/card1/Microsoft-Fluentui-Emoji-3d-Fish-3d.svg">
+                    <img src="./res/icons/cards/card1/Microsoft-Fluentui-Emoji-3d-Fork-And-Knife-With-Plate-3d.svg"
+                        alt="">
+                </div>
+                <div class="containerTextEmojiCard vidCardSecondImg vidCardNotActive" id="card2">
+                    <p>Poznejte ... </p>
+                    <img src="./res/icons/cards/card1/Microsoft-Fluentui-Emoji-3d-Face-Holding-Back-Tears-3d.svg" alt="">
+                    <img src="./res/icons/cards/card1/japanese-castle_1f3ef.png" alt="">
+                    <img src="./res/icons/cards/card1/rose_1f339.png" alt="">
+                </div>
+                <div class="containerTextEmojiCard vidCardThirdImg vidCardNotActive" id="card3">
+                    <p>Zažijte ... </p>
+                    <img src="./res/icons/cards/card1/joystick_1f579-fe0f.png" alt="">
+                    <img src="./res/icons/cards/card1/flower-playing-cards_1f3b4.png" alt="">
+                    <img src="./res/icons/cards/card1/performing-arts_1f3ad.png" alt="">
+                </div>
+            </div>
+            <div class="arrowImageVideoCardWrapper">
+
+                <img class="bounceEffect vidCardFirstImg" id="arrowLeft" src="./res/icons/cards/card1/arrowLeft.png">
+                <img class="VideoCardImage vidCardFirstImg" id="card1" src="./res/pics/cards/card1/ramen-05.jpg">
+                <img class="VideoCardImage vidCardSecondImg vidCardNotActive" id="card2"
+                    src="./res/pics/cards/card2/HiranoShrine_card2.jpg">
+                <img class="VideoCardImage vidCardThirdImg vidCardNotActive" id="card3"
+                    src="./res/pics/cards/card3/zazijte_card3.webp">
+                <img class="bounceEffect vidCardFirstImg" id="arrowRight" src="./res/icons/cards/card1/arrowRight.png">
+            </div>
+            <div class="containerProgressRing">
+                <div class="vidCardFirstImg vidCardImg">
+                    <img src="./res/icons/sel.png">
+                    <img src="./res/icons/unsel.png">
+                    <img src="./res/icons/unsel.png">
+                </div>
+                <div class="vidCardSecondImg vidCardNotActive dsplFlexJusCenter">
+                    <img src="./res/icons/unsel.png">
+                    <img src="./res/icons/sel.png">
+                    <img src="./res/icons/unsel.png">
+                </div>
+                <div class="vidCardThirdImg vidCardNotActive dsplFlexJusCenter">
+                    <img src="./res/icons/unsel.png">
+                    <img src="./res/icons/unsel.png">
+                    <img src="./res/icons/sel.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section2_places">
+        <img class="bodyArrowDown" src="./res/pics/arrowDown_body.svg" alt="">
+        <h1>Navštivte nejznámější Japonská města</h1>
+        <div class="section2_placesWrapper">
+            <div class="section2_tile">
+                <img src="./res/pics/section2_places/place2_Osaka.jpg" alt="">
+                <div class="section2_tile_body">
+                    <div class="section2_tile_content_wrapper">
+                        <div class="section2_tile_content_cityname">
+                            <h2>Ósaka</h2>
+                            <p>大阪市</p>
+                        </div>
+                        <div class="section2_tile_content_citymap">
+                            <a href="https://maps.app.goo.gl/8Mypdf4zhW3Zy5Es9">
+                                <img class="section2_cityMapsBtn" src="./res/icons/cards/section2_cards/gMaps_icon.svg"/>
+                            </a>
+                            <img onclick="openSection2_Tab1_Osaka()" class="section2_cityInfoBtn" src="./res/icons/cards/section2_cards/arrowRight_circled.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section2_tile">
+                <img src="./res/pics/section2_places/place2_Tokio.webp" alt="">
+                <div class="section2_tile_body">
+                    <div class="section2_tile_content_wrapper">
+                        <div class="section2_tile_content_cityname">
+                            <h2>Tokio</h2>
+                            <p>東京</p>
+                        </div>
+                        <div class="section2_tile_content_citymap">
+                            <a href="https://maps.app.goo.gl/nFztiG3JDBmypd1w6">
+                                <img class="section2_cityMapsBtn" src="./res/icons/cards/section2_cards/gMaps_icon.svg"/>
+                            </a>
+                            <img onclick="openSection2_Tab2_Tokyo()" class="section2_cityInfoBtn" src="./res/icons/cards/section2_cards/arrowRight_circled.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section2_tile">
+                <img src="./res/pics/section2_places/place4_Kyoto.jpg" alt="">
+                <div class="section2_tile_body">
+                    <div class="section2_tile_content_wrapper">
+                        <div class="section2_tile_content_cityname">
+                            <h2>Kyoto</h2>
+                            <p>京都市</p>
+                        </div>
+                        <div class="section2_tile_content_citymap">
+                            <a href="https://maps.app.goo.gl/nFztiG3JDBmypd1w6">
+                                <img class="section2_cityMapsBtn" src="./res/icons/cards/section2_cards/gMaps_icon.svg"/>
+                            </a>
+                            <img onclick="openSection2_Tab2_Kyoto()" class="section2_cityInfoBtn" src="./res/icons/cards/section2_cards/arrowRight_circled.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section2_tile">
+                <img src="./res/pics/section2_places/place4_Kobe.jpg" alt="">
+                <div class="section2_tile_body">
+                    <div class="section2_tile_content_wrapper">
+                        <div class="section2_tile_content_cityname">
+                            <h2>Kóbe</h2>
+                            <p>神戸市</p>
+                        </div>
+                        <div class="section2_tile_content_citymap">
+                            <a href="https://maps.app.goo.gl/nFztiG3JDBmypd1w6">
+                                <img class="section2_cityMapsBtn" src="./res/icons/cards/section2_cards/gMaps_icon.svg"/>
+                            </a>
+                            <img onclick="openSection2_Tab2_Kobe()" class="section2_cityInfoBtn" src="./res/icons/cards/section2_cards/arrowRight_circled.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section3_food">
+        <div class="section3_food_descrip">
+            <div class="section3_upperWrapper">
+                <div class="section3_Kitchen_Fish_Wrapper">
+                    <img class="section3_food_KitchenLogo" src="./res/icons/section3_food/food_logo.svg" alt="">
+                    <h1>Vychutnejte si tradiční Japonské jídlo</h1>
+                    <p>Asijské pochutiny Vám změní Váš dosavadní pohled na gastronomii!</p>
+                </div>
+            </div>
+            <div class="section3_foodGallery">
+                <a href="https://www.recepty.cz/recept/ramen-163734" class="section3_card">
+                    <img src="./res/pics/section3_food/foodGallery/1_1_ramen.jfif" alt="balloon with an emoji face" class="section3_cardImg">
+                    <span class="section3_cardFooter">
+                      <span>Rámen</span>
+                      <span>フレーム</span>
+                    </span>
+                    <span class="section3_cardAnimation">
+                      <img src="./res/icons/section3_food/recept_logo.svg" alt="">
+                    </span>
+                </a>
+
+                <a href="https://www.susi.cz/recept/kure-yakitori/" class="section3_card">
+                    <img src="./res/pics/section3_food/foodGallery/2_1_yakitori.jpg" alt="balloon with an emoji face" class="section3_cardImg">
+                    <span class="section3_cardFooter">
+                      <span>Yakitori</span>
+                      <span>焼き鳥</span>
+                    </span>
+                    <span class="section3_cardAnimation">
+                        <img src="./res/icons/section3_food/recept_logo.svg" alt="">
+                    </span>
+                </a>
+
+                <a href="https://www.apetitonline.cz/recepty/sushi-pro-zacatecniky" class="section3_card">
+                    <img src="./res/pics/section3_food/foodGallery/3_1_sushi.avif" alt="balloon with an emoji face" class="section3_cardImg">
+                    <span class="section3_cardFooter">
+                      <span>Sushi</span>
+                      <span>寿司</span>
+                    </span>
+                    <span class="section3_cardAnimation">
+                        <img src="./res/icons/section3_food/recept_logo.svg" alt="">
+                    </span>
+                </a>
+                
+            </div>
+        </div>
+        
+    </div>
+    <footer>
+        <div class="LeftText">
+            <h1>Doscrollovali jste až sem?</h1>
+            <h3>Cesta tu sice dále nevede, ale já Vám poradím, kudy jinudy vyrazit!</h3>
+            <div class="footerSocial">
+                <a href="https://github.com/amanedev">
+                    <div class="footerIconWrapper">
+                        <img class="footerSocialIcon" src="./res/icons/footer/FooterSocial_github.png" alt="">
+                        <div class="footerSocialIconBlurOverlay">
+                            <div class="footerRedirectButton">
+                                <img src="./res/icons/arrow-right-circle.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footerDescription">
+                        <p>Podívejte se na GitHub autora</p>
+                    </div>
+                    </a>
+                  
+                <a href="https://www.cz.emb-japan.go.jp/itprtop_cs/index.html">
+                    <div class="footerIconWrapper">
+                        <img class="footerSocialIcon" src="./res/icons/footer/FooterSocial_velvyslanectvi.png" alt="">
+                        <div class="footerSocialIconBlurOverlay">
+                            <div class="footerRedirectButton">
+                                <img src="./res/icons/arrow-right-circle.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footerDescription">
+                        <p>Prozkoumejte oficiální web Velvyslanectví</p>
+                    </div>
+                </a>
+                <a href="https://www.crunchyroll.com/">
+                    <div class="footerIconWrapper">
+                        <img class="footerSocialIcon" src="./res/icons/footer/FooterSocial_crunchy.png" alt="">
+                        <div class="footerSocialIconBlurOverlay">
+                            <div class="footerRedirectButton">
+                                <img src="./res/icons/arrow-right-circle.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footerDescription">
+                        <p>Koukněte na nějaké Anime</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="ImgAnimeGirlWrapper">
+            <img class="ImgAnimeGirl" src="./res/pics/footer/Footer_1_YunoScrolledTrue.png" alt="">
+        </div>
+    </footer>
+
+
+    <!-- Overlay pro more info o places kartach, zde dole je to aby to prekrylo vsechny ostatni elementy-->
+    <div id="section2_Tab1_Osaka" class="section2_Tab_Overlay">
+        <!-- btn na zavreni overlaye -->
+        <a href="javascript:void(0)" class="Section2_Tab_Overlayclosebtn" onclick="closeSection2_Tab1_Osaka()">&times;</a>
+        <h1>Osaka</h1>
+        <p>- V české transkripci: <b>Ósaka</b> (japonsky: 大阪市, vyslovuje se: Ósaka; Ósaka ~ velký mys) je hlavní město prefektury Ósaka.</p>
+        <p>- <b>3.</b> Největší město v Japonsku s počtem obyvatel 2,7 milionu.</p>
+        <p> - <b>Leží</b> v oblasti Kinki na ostrově Honšú v místě, kde řeka Jodo ústí do Ósackého zálivu.</p>
+        <div class="section2_Tab_Overlay_Img_Flex_wrapper">
+            <img src="./res/pics/Section2_Places_InfoCard/1_1_Osaka.jpg" alt="">
+        </div>
+    </div>
+
+    <div id="section2_Tab2_Tokyo" class="section2_Tab_Overlay">
+        <!-- btn na zavreni overlaye -->
+        <a href="javascript:void(0)" class="Section2_Tab_Overlayclosebtn" onclick="closeSection2_Tab2_Tokyo()">&times;</a>
+        <h1>Tokyo</h1>
+        <p>- V české transkripci: <b>Tokio</b> (japonsky 東京, vyslovuje se: Tókjó), oficiálním názvem Metropolitní město Tokio (japonsky 東京都, Tókjó-to), je hlavní město[pozn. 2] a nejlidnatější japonská prefektura.</p>
+        <p>- Rozléhá se u Tokijského zálivu a tvoří region Kantó, ležící na centrálním tichomořském pobřeží hlavního japonského ostrova Honšú.</p>
+        <p>- Tokio je politické a ekonomické centrum státu, stejně jako je sídlem japonského císaře a národní vlády.</p>
+        <div class="section2_Tab_Overlay_Img_Flex_wrapper">
+            <img src="./res/pics/Section2_Places_InfoCard/2_1_Tokio.jpg" alt="">
+        </div>
+    </div>
+
+
+    <div id="section2_Tab2_Kyoto" class="section2_Tab_Overlay">
+        <!-- btn na zavreni overlaye -->
+        <a href="javascript:void(0)" class="Section2_Tab_Overlayclosebtn" onclick="closeSection2_Tab2_Kyoto()">&times;</a>
+        <h1>Kyoto</h1>
+        <p>- V české transkripci: <b>Kjóto</b> (japonsky: 京都市, vyslovuje se: Kjóto-ši)</p>
+        <p>- <b>Historie: </b>s populací více než 1,5 milionu, bylo dříve hlavním městem Japonska a je známo jako tisícileté hlavní město1. Město má bohatou historii, která sahá až do paleolitu a bylo založeno v roce 794 podle čínského vzoru.</p>
+        <p>- <b>Kulturní význam: </b>Během druhé světové války bylo Kjóto ušetřeno bombardování díky svému kulturnímu významu. Dnes je domovem 1600 buddhistických chrámů, 400 šintoistických svatyní a mnoha dalších památek.</p>
+        <p>- <b>Ekonomika a průmysl: </b>Kjóto je kulturním centrem Japonska s průmyslem zaměřeným na malé továrny a dílny, které vyrábějí tradiční japonské výrobky2. Město je také sídlem několika významných elektronických společností. Sídlí tu třeba slavné <b>Nintento</b></p>
+        <div class="section2_Tab_Overlay_Img_Flex_wrapper">
+            <img src="./res/pics/Section2_Places_InfoCard/3_1_Kyoto.webp" alt="">
+            <img src="./res/pics/Section2_Places_InfoCard/3_2_Kyoto.webp" alt="">
+        </div>
+    </div>
+
+    <div id="section2_Tab2_Kobe" class="section2_Tab_Overlay">
+        <!-- btn na zavreni overlaye -->
+        <a href="javascript:void(0)" class="Section2_Tab_Overlayclosebtn" onclick="closeSection2_Tab2_Kobe()">&times;</a>
+        <h1>Kobe</h1>
+        <p>- V české transkripci: <b>Kóbe (神戸市; vyslovuje se: Kóbe-ši)</b>
+        <p>- <b>Poloha a význam:</b>Kóbe je hlavní město prefektury Hjógo v Japonsku, známé jako důležitý přístav a bylo jedním z prvních měst otevřených pro obchod se Západem.</p>
+        <p>- <b>Historie:</b> Krátce v roce 1180 bylo hlavním městem Japonska a moderní město bylo založeno 1. dubna 1889.</p>
+        <div class="section2_Tab_Overlay_Img_Flex_wrapper">
+            <img src="./res/pics/Section2_Places_InfoCard/4_1_kobe.jpg" alt="">
+            <img src="./res/pics/Section2_Places_InfoCard/4_2_kobe.webp" alt="">
+            <!--<img class="section2_Tab_countryMap" src="./res/pics/Section2_Places_InfoCard/1_2_OsakaMap.png" alt=""> -->
+        </div>
+    </div>
+</body>
+</html>

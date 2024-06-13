@@ -1,0 +1,669 @@
+@import url('https://fonts.googleapis.com/css2?family=Freeman&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+:root{
+    --whiteCol: white;
+    --blackCol: black;
+    --bordRad5px: 5px;
+    --bordRad10px: 10px;
+    --bordRad30px: 30px;
+    --section2ButtonsShadow:rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    --section2TilesShadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    --footerButtonsShadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    --White_Acrylic_Webkit_backdrop_filter: blur(10px) saturate(180%);
+    --White_Acrylic_backdrop_filter: blur(10px) saturate(180%);
+    --White_Acrylic_background_color: rgba(255,255,255,.5);
+    --fontSizeFooter: 1.4rem;
+    --fontSize_Nadpisy_Footer_respons: 3rem;
+    --fontSize_NadpisySection3: 1.6rem;
+    --fontSize_Podnadpisy: 1.4rem;
+    --fontSize_Podnadpisy_smaller: 1rem;
+    --blur: 16px;
+    --size: clamp(300px, 50vmin, 600px);
+    --White_Acrylic_backgrop_filter2_buttons: blur(calc(var(--blur) * 0.5));
+    --White_Acrylic_background_color2_buttons: hsl(0 0% 100% / 0.5);
+    --grayCol: gray;
+    --defaultGap: 1rem;
+    --BigGap: 2rem;
+    --LittleGap: .5rem;
+    --hoverScale: 1.2;
+    --hoverTransition: .2s ease-in;
+    --lineHeightStandard: 1.8rem;
+}
+
+body{
+    min-height: 300vh;
+    font-family: "Freeman", arial;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 400px;
+}
+p{
+    line-height: var(--lineHeightStandard);
+}
+.topNav{
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    position: fixed;
+    transition: 0.3s;
+    padding: .6rem;
+    top: 5rem;
+    width: 70%;
+    height: 8%;
+    background-color: var(--whiteCol);
+    border-radius: var(--bordRad5px);
+    opacity: 100%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.agentureSign{
+    display: flex;
+    align-items: center;
+}
+
+.topNav img{
+    width: 100px;
+    height: 65px; /* lepší použít width: 100% height neudávat*/
+}
+.buttons{
+    display:flex;
+    justify-content: center;
+    /*transition: transform 0.3s ease;*/
+   
+}
+.hamburgerItemsSidebar{
+    padding: 2rem;
+    display: none;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-color: var(--White_Acrylic_background_color);
+    box-shadow: var(--footerButtonsShadow);
+    backdrop-filter: var(--White_Acrylic_backgrop_filter2_buttons);
+    row-gap: 1rem;
+}
+.hamburgerItemsSidebar a{
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.hamIcon{
+    cursor: pointer;
+}
+#hamIconHide{  /*zvyseni priority pres ID, skryti tlacitka za normalnich okolnosti*/
+    display:none;
+}
+.hamburgerItemsSidebar .closeHamIcon{
+    width:8%;
+    height: 6%;
+}
+.navButtons{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .1rem 1.1rem .1rem 1.1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    margin: 0 1rem 0 1rem;
+    border-radius: var(--bordRad10px);
+    color: var(--blackCol);   /*později je pouzivana modra barva pro <a> ... zde je fixne cerna aby ji nic neprepsalo*/
+}
+.goBackBtnNavbar{
+    height: 3rem;
+}
+.navbuttons:active{
+    transform: scale(0.9);
+}
+.navButtons:not(:active) {
+    animation: bounceBack 0.5s forwards;
+}
+@keyframes bounceBack {
+    0% { transform: scale(0.9); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1.0); }
+}
+.navButtons img{
+    width: 40px;
+    height: 30px;
+}
+.navButtons:hover{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.section1_bgHomeVid{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    height: 63rem;
+    margin: 2rem 0rem 0rem 0;
+    border-radius: var(--bordRad10px);
+}
+video{
+    border-radius: var(--bordRad30px);
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.videoCard{
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    position: absolute;
+    row-gap: 1rem;
+    top: 20rem;  /*absolutní pozicování videoCard ramecku nad bgVideem*/
+    right: 25rem;
+    padding: .5rem 2rem 3.2rem 2rem;
+    height: 30%;
+    width: 400px;
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    backdrop-filter: blur(10px) saturate(180%);
+    background-color: rgba(255,255,255,.5);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.3);
+    border-radius: 1rem;
+    color: rgba(0, 0, 0, .7);
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}   
+
+.vidCardTitle{
+    display: flex;
+    justify-content: center;
+}
+.containerTextEmojiCard{
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.containerTextEmojiCard img{
+    width: 3rem;
+    height: 3rem;
+}
+.containerProgressRing{
+    display:flex;
+    justify-content: center;
+}
+.containerProgressRing img{
+    width: 10px;
+    height: 10px;
+}
+.VideoCardImage{
+    object-fit: cover;
+    border-radius: var(--bordRad10px);
+    cursor:default;
+}
+.arrowImageVideoCardWrapper{
+    display: flex;
+    justify-content: center;
+    column-gap: 1rem;
+}
+.arrowImageVideoCardWrapper img{
+    width: 20rem;
+    height: 11rem;
+}
+.arrowImageVideoCardWrapper .bounceEffect:hover{
+    cursor: pointer;
+}
+.bounceEffect:active{
+    transform: scale(0.9);
+}
+.bounceEffect:not(:active) {
+    animation: bounceBack 0.5s forwards;
+}
+@keyframes bounceBack {
+    0% { transform: scale(0.9); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1.0); }
+}
+.vidCardNotActive{
+    visibility: hidden;
+    position: absolute;
+}
+.vidCardImg{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.bodyArrowDown{
+    margin: 2rem 0 0 0;
+    width: 2rem;
+}
+.section2_places{
+    text-align: center;
+    margin: 0 1 0 1rem;  /*zachování rozestupu od okraje pri responzibilite*/
+}
+.section2_placesWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 1rem;
+}
+.section2_tile{
+    position: relative;
+    padding: 1rem;
+    box-shadow: var(--section2TilesShadow);
+    border-radius: var(--bordRad10px);
+    width: 18rem;
+    height: 23rem;
+    overflow: hidden;    
+    display: flex;
+    justify-content: center;
+}
+.section2_tile img{
+    border-radius: var(--bordRad10px);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.section2_tile_body{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-radius: var(--bordRad10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+.section2_tile_content_wrapper{
+    background-color: var(--whiteCol);
+    margin: 1.8rem;
+    width: 75%;
+    height: 20%;
+    border-radius: var(--bordRad10px);
+    -webkit-backdrop-filter: var(--White_Acrylic_backdrop_filter);
+    backdrop-filter: var(--White_Acrylic_backdrop_filter);
+    background-color: var(--White_Acrylic_background_color);
+    padding: 1rem 1rem 1rem 2rem;
+    line-height: .6rem;
+    display: flex;
+    justify-content: space-between;
+}
+.section2_tile_content_citymap img{
+    width: auto;
+    height: auto;
+}
+a{
+    text-decoration: none; /* zbavení se podtržení */
+}
+.section2_cityInfoBtn{
+    cursor: pointer;
+    padding: .4rem;
+}
+.section2_cityInfoBtn:hover{
+    box-shadow: var(--section2ButtonsShadow);
+}
+.section2_cityInfoBtn:active{
+    transform: scale(0.9);
+}
+.section2_cityInfoBtn:not(:active) {
+    animation: bounceBack 0.5s forwards; /*bounceback keyframes jsou u navbaru*/
+}
+.section2_cityMapsBtn{
+    padding: .4rem;
+}
+.section2_cityMapsBtn:hover{
+    box-shadow: var(--section2ButtonsShadow);
+}
+.section2_cityMapsBtn:active{
+    transform: scale(0.9);
+}
+.section2_cityMapsBtn:not(:active) {
+    animation: bounceBack 0.5s forwards; /*bounceback keyframes jsou u navbaru*/
+}
+
+
+
+/* overlay pro more info o places kartach) */
+.section2_Tab_Overlay {
+  max-height: 65%;  /*vyska z dostupne plochy cele stranky, "max" aby pri nutnosti scrollu byl dostupny scrollbar*/
+  width: 0%;
+  position: fixed;
+  z-index: 1;
+  top: 25%;
+  left: -10rem;
+  -webkit-backdrop-filter: var(--White_Acrylic_backdrop_filter);
+  backdrop-filter: var(--White_Acrylic_backdrop_filter);
+  background-color: var(--White_Acrylic_background_color);
+  overflow-x: hidden;
+  transition: 0.5s;
+  box-shadow: var(--section2TilesShadow);
+  padding: 3rem;
+  border-radius: var(--bordRad10px);
+  outline: solid rgba(255,255,255,.5);
+}
+
+
+.section2_Tab_Overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #6d6c6c;
+  display: block;
+  transition: 0.3s;
+}
+
+.ssection2_Tab_Overlay a:hover, .section2_Tab_Overlay a:focus {
+  color: #f1f1f1;
+}
+
+.section2_Tab_Overlay .Section2_Tab_Overlayclosebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;  /*velikost "X"*/
+}
+
+.section2_Tab_Overlay_Img_Flex_wrapper img{
+  width: 100%;
+  height: 60%;
+  margin: 0 0 1rem 0;
+  border-radius: var(--bordRad10px);
+  box-shadow: var(--section2TilesShadow);
+  flex-wrap: wrap;
+}
+
+.section2_Tab_Overlay_Img_Flex_wrapper{
+    display: flex;  /*pro pripad vice obrazku*/
+    flex-direction: column;
+}
+
+@media screen and (max-height: 450px) {
+  .section2_Tab_Overlay a {font-size: 20px}
+  .section2_Tab_Overlay .Section2_Tab_Overlayclosebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+/*konec overlaye pro more info o places kartach)*/
+
+.section3_food{
+    margin: 5rem 0 0 0;
+    padding: 1rem;
+    width: 80%;
+    border-radius: var(--bordRad10px);    
+    box-shadow: var(--section2ButtonsShadow);
+}
+.section3_Kitchen_Fish_Wrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1rem 0;
+    font-size: var(--fontSize_Podnadpisy);
+}
+.section3_food_descrip{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.section3_food_rightImg img{
+    width: 30rem;
+    border-radius: var(--bordRad10px);
+}
+.section3_food_KitchenLogo{
+    width: 3rem;
+}
+.section3_foodGallery{
+    display: flex;
+    justify-content: space-between;
+    gap: 0 1rem;
+}
+.section3_upperWrapper{
+  display: flex;
+  justify-content: space-between;
+  background-image: url(./res/pics/section3_food/backgroundImg_fuguFish.png);
+  background-size: 25%;
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+.section3_foodCard{
+  width: var(--size);
+  aspect-ratio: 4 / 3;
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  color: #000;
+  transform: translateZ(0);
+}
+.section3_food_card_Img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(calc(1 + (var(--hover, 0) * 0.25))) rotate(calc(var(--hover, 0) * -5deg));
+  transition: transform 0.2s;
+}
+.section3_cardFooter {
+  padding: 0 1.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: red;
+  display: grid;
+  grid-template-row: auto auto;
+  gap: 0.5ch;
+  background: hsl(0 0% 100% / 0.5);
+  backdrop-filter: blur(var(--blur));
+  height: 30%;
+  align-content: center;
+}
+  
+.section3_cardAnimation {
+  position: absolute;
+  aspect-ratio: 1;
+  width: calc(var(--size) * 0.15);
+  bottom: 30%;
+  right: 1.5rem;
+  transform: translateY(50%)
+    translateY(
+      calc(
+        (var(--size) * 0.4) /*vertikalni posun je size * konstanta 0.4, která byla tak akorát*/
+      )
+    )
+    translateY(calc(var(--hover, 0) * (var(--size) * -0.4)));
+  background: purple;
+  display: grid;
+  place-items: center;
+  border-radius: 0.5rem;
+  background: var(--White_Acrylic_background_color2_buttons);
+  backdrop-filter: var(--White_Acrylic_backgrop_filter2_buttons);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.section3_cardAnimation img {  /*aby logo kucharky/receptu v tom flybuttonu nezabiralo cely span*/
+  aspect-ratio: 1;
+  width: 90%;
+}
+.section3_cardAnimation img:active{
+    transform: scale(0.9);
+}
+.section3_cardAnimation img:not(:active) {
+    animation: bounceBack 0.5s forwards; /*bounceback keyframes jsou u navbaru*/
+}
+.section3_cardFooter span:nth-of-type(1) {
+  font-size: var(--fontSize_NadpisySection3);
+}
+.section3_cardFooter span:nth-of-type(2) {
+  font-size: var(--fontSize_Podnadpisy);
+}
+.section3_card:is(:hover, :focus-visible) {
+  --hover: 1;
+} 
+.section3_card {
+  --blur: 16px;
+  --size: clamp(300px, 50vmin, 600px);
+  width: var(--size);
+  aspect-ratio: 4 / 3;
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  color: #000;
+  transform: translateZ(0);
+  cursor: default;
+}
+.section3_cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(calc(1 + (var(--hover, 0) * 0.25))) rotate(calc(var(--hover, 0) * -5deg));
+  transition: transform 0.2s;
+}
+  
+@media screen and (max-width: 1000px) {
+    /*Hamburger menu*/
+    .buttons{
+        flex-direction: column;
+        display: block;
+    }
+    .hideNavButtonsRespo{
+        display: none;
+    }
+    #hamIconHide{
+        display:block;
+    }
+    
+    /*responzivita pro section1 (videobg)*/
+    .videoCard{
+        display: none; /*na male obrazovce by bylo ovladani nepohodlne a zabranilo by to na malem displayi az moc vyhledu na bg video*/
+    }
+    /*respo pro section2*/
+    .section2_Tab2_Tokyo{
+        width: 20%;
+    }
+    /*responzivita pro section3*/
+  .section3_foodGallery{
+    flex-direction: column;
+    align-items: center;
+  }
+  .section3_foodGallery a{
+    margin: 0 0 2rem 0;
+  }
+  .section3_cardFooter{
+    height: 40%;
+  }
+  .section3_Kitchen_Fish_Wrapper h1{
+    font-size: var(--fontSize_NadpisySection3);
+  }
+  .section3_Kitchen_Fish_Wrapper p{
+    font-size: var(--fontSize_Podnadpisy_smaller);
+    text-align: left;
+  }
+  /*responzivita pro footer*/
+  footer{
+    flex-direction: column;
+  }
+  .footerSocial{
+    flex-direction: column;
+  }
+  .footerSocial a{
+    margin: 0 0 3rem 0;
+  }
+  .LeftText{
+    padding: 4rem;
+  }
+  .ImgAnimeGirl{
+    width: 60%;
+}
+  
+}  
+
+
+footer{
+    display: flex;
+    top: 3rem;
+    margin: 2rem;
+}
+footer .LeftText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--grayCol);
+    font-family: "Shantell Sans", cursive;
+    font-stretch:ultra-condensed;
+    font-size: var(--fontSizeFooter);
+}
+footer .LeftText h3{
+    color: #000;
+    margin: 0 0 5rem 0;
+}
+.footerSocial{
+    display: flex;
+    justify-content: space-between;
+}
+.footerSocialIcon{
+    height: 5rem;
+}
+.footerDescription{
+    padding: .2rem .8rem .2rem .8rem;
+    box-shadow: var(--footerButtonsShadow);
+    border-radius: var(--bordRad30px);
+    margin: 1rem 1rem 0 1rem;
+}
+.footerSocial div p{
+    text-align: center;
+    color: var(--grayCol);
+}
+.footerIconWrapper{
+    display:flex;
+    justify-content: center;
+    position: relative;
+}
+.footerSocialIconBlurOverlay{
+    top: -1rem;
+    padding: 1rem;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+}
+.footerSocialIconBlurOverlay:hover{
+    background-color: var(--White_Acrylic_background_color);
+    backdrop-filter: var(--White_Acrylic_backdrop_filter); 
+    
+}
+.footerRedirectButton{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.footerRedirectButton:hover{
+    animation: opacityanimation 0.5s forwards;
+}
+.footerRedirectButton img:active{
+    transform: scale(0.9);
+}
+.footerRedirectButton img:not(:active) {
+    animation: bounceBack 0.5s forwards; /*bounceback keyframes jsou u navbaru*/
+}
+
+@keyframes opacityanimation {
+    0% { opacity: 0.2; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1.0; }
+}
+.ImgAnimeGirlWrapper{
+    display: flex;
+    justify-content: center;
+}
+
