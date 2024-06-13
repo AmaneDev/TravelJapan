@@ -207,7 +207,6 @@ a{
     box-shadow: var(--section2ButtonsShadow);
     border-radius: var(--bordRad10px);
     align-items: center;
-    gap: var(--defaultGap);
     cursor: pointer;
 }
 .S1Button img{
