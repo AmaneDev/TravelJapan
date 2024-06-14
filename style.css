@@ -48,14 +48,12 @@ p{
     z-index: 1;
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
     align-items: center;
     position: fixed;
     transition: 0.3s;
     padding: .6rem;
     top: 5rem;
     width: 70%;
-    height: 8%;
     background-color: var(--whiteCol);
     border-radius: var(--bordRad5px);
     opacity: 100%;
@@ -68,13 +66,10 @@ p{
 
 .topNav img{
     width: 100px;
-    height: 65px; /* lepší použít width: 100% height neudávat*/
 }
 .buttons{
     display:flex;
-    justify-content: center;
-    /*transition: transform 0.3s ease;*/
-   
+    justify-content: center;  
 }
 .hamburgerItemsSidebar{
     padding: 2rem;

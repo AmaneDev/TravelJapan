@@ -50,14 +50,12 @@ a{
     z-index: 1;
     display: flex;
     justify-content: space-between;
-    gap: var(--defaultGap);
     align-items: center;
     position: fixed;
     transition: 0.3s;
     padding: .6rem;
     top: 5rem;
     width: 80%;
-    height: 9%;
     background-color: var(--whiteCol);
     border-radius: var(--bordRad5px);
     opacity: 100%;
