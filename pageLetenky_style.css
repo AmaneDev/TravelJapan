@@ -306,6 +306,9 @@ button{
     }  
     .S2_Warning_element h1{
         font-size: var(--fontSize_NumbersMobile);
-    }  
+    } 
+    .topNav{
+        gap: 0;
+    } 
     
 }    

@@ -44,6 +44,7 @@ p{
     line-height: var(--lineHeightStandard);
 }
 .topNav{
+    line-height: var(--lineHeightStandard);
     z-index: 1;
     display: flex;
     justify-content: space-between;
@@ -581,6 +582,10 @@ a{
   }
   .ImgAnimeGirl{
     width: 60%;
+}
+/*navBar*/
+.topNav{
+    gap: 0;
 }
   
 }  

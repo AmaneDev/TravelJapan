@@ -13,10 +13,10 @@ window.onscroll = function() {
   var currentScrollPos = window.scrollY;
   if (prevScrollpos > currentScrollPos) {
     document.getElementById("navbar").style.top = "5rem";
-    document.getElementById("navbar").style.opacity = "100%"
+    document.getElementById("navbar").style.opacity = "100%";
 } else {
-    document.getElementById("navbar").style.top = "-5rem";
-    document.getElementById("navbar").style.opacity = "-100%"  /*meneni opacity values v css*/
+    document.getElementById("navbar").style.top = "-5rem"; /*meni top values*/
+    document.getElementById("navbar").style.opacity = "-100%";  /*meneni opacity values v css*/
   }
   prevScrollpos = currentScrollPos;
 }

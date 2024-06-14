@@ -272,4 +272,10 @@ h1{
     .S4_boxes_wrapper{
         flex-direction: column;
     }
+
+    /*navbar*/
+    .topNav{
+        gap: 0;
+        width: 70%;
+    }
 }    

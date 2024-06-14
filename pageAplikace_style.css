@@ -57,7 +57,7 @@ a{
     padding: .6rem;
     top: 5rem;
     width: 80%;
-    height: 8%;
+    height: 9%;
     background-color: var(--whiteCol);
     border-radius: var(--bordRad5px);
     opacity: 100%;
@@ -100,6 +100,7 @@ a{
     top: 0;
     right: 0;
     height: 100vh;
+    height: 100%;
     width: 100%;
     z-index: 2;
     background-color: var(--White_Acrylic_background_color);
@@ -222,7 +223,7 @@ a{
 
 /*overlaye*/
 .overlay_1_GMAPS{
-    display: none;  /*u vsech disp:none propertie kvuli JS () ktera values prepisuje z none na block*/
+    display: none;  /*u vsech disp:none propertie kvuli JS () ktera values prepisuje z none na block a naopak*/
 }
 .overlay_1_DeepL{
     display: none;
@@ -286,6 +287,11 @@ a{
 }
 
 @media screen and (max-width: 1000px) {
+    /*navbar*/
+    .topNav{
+        gap: 0;
+        width: 70%;
+    }
     /*Hamburger menu*/
     .buttons{
         flex-direction: column;
@@ -330,5 +336,9 @@ a{
     .overlayContent{
         flex-direction: column;
         padding: var(--paddingInsideTileMobile);
+    }
+    .overlay{
+        width: 100%;
+        padding: 1rem 0 0 0;
     }
 }    
