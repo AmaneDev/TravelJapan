@@ -29,6 +29,7 @@
     --fontSize_NumbersMobile: 3em;
     --hoverScaleLower: 1.1;
     --hoverTransition: .2s ease-in;
+    --navBarLineHeight: 1.8rem;
 
 }
 body{
@@ -39,7 +40,6 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    min-width: 400px;
 }
 a{
     text-decoration: none; /* zbavení se podtržení */
@@ -172,20 +172,9 @@ button{
 .S1leftText img{
     width: 5rem;
 }
-.S1leftText h1{
-    line-height: .3rem;
-}
-.S1leftText p{
-    line-height: 3rem;
-}
-.S1leftBtn{
-    height: 20%;
-}
 .S1leftText a{
     margin: auto;
 }
-
-
 /*sekce2*/
 .Warning2{
     margin: 1rem 0 0 0;

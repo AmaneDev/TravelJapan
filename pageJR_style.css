@@ -35,7 +35,6 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    min-width: 400px;
     padding: 1.7rem;
     text-align: center;
 }

@@ -38,7 +38,6 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    min-width: 400px;
     background-image: url(./res/pics/appsPage/shrineBgImg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -236,13 +235,11 @@ a{
     display: none;
 }
 .overlay{
-    justify-content: center;
-    align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 100%;
+    min-height: 100vh;
     background-color: var(--darkedBgCol);
     backdrop-filter: var(--White_Acrylic_backdrop_filter);
     z-index: 3;
@@ -308,17 +305,6 @@ a{
         display: block;
     }
     
-    /*responzivita pro videobg*/
-    .videoCard{
-        right: 0;
-        height: 23rem;
-        max-width: 18.5rem;
-        row-gap: 0;
-    }
-    .arrowImageVideoCardWrapper img{
-        width: 70%;
-        height: 90%
-    }
     /*respo pro Section1 (cards)*/
     .S1_appContainer{
         flex-direction: column;
@@ -336,7 +322,7 @@ a{
         padding: var(--paddingInsideTileMobile);
     }
     .overlay{
-        width: 100%;
-        padding: 1rem 0 0 0;
+        padding: .5rem 0 0 0;
+        overflow-y: scroll;
     }
 }    
