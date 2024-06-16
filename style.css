@@ -28,6 +28,20 @@
     --hoverScale: 1.2;
     --hoverTransition: .2s ease-in;
     --lineHeightStandard: 1.8rem;
+    --closeHamIconPadding: .5rem 1rem .5rem 1rem;
+    --vCardPadding: .5rem 2rem 3.2rem 2rem;
+    --vCardBGFilter:blur(10px) saturate(180%);
+    --vCardBGCol:  rgba(255,255,255,.5);
+    --vCardBoxShadow: 0 1rem 2rem rgba(0,0,0,.3);
+    --gapStandard1rem: 1rem;
+    --topNavShadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    --topMargin2remUnderNavbar: 2rem 0rem 0rem 0;
+    --standardPadding1rem: 1rem;
+    --fontsVCard: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --navButtonsBoxShadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    --navButtonsBoxShadowHover:  rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    --overlayOutline: solid rgba(255,255,255,.5);
+    --closeBTNFocusAOverlay: #f1f1f1;
 }
 
 body{
@@ -56,7 +70,7 @@ p{
     background-color: var(--whiteCol);
     border-radius: var(--bordRad5px);
     opacity: 100%;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow: var(--topNavShadow);
 }
 .agentureSign{
     display: flex;
@@ -85,7 +99,7 @@ p{
     background-color: var(--White_Acrylic_background_color);
     box-shadow: var(--footerButtonsShadow);
     backdrop-filter: var(--White_Acrylic_backgrop_filter2_buttons);
-    row-gap: 1rem;
+    gap: 1rem;
 }
 .hamburgerItemsSidebar a{
     width: 70%;
@@ -100,14 +114,14 @@ p{
 }
 .hamburgerItemsSidebar .closeHamIcon{
     width:8%;
-    height: 6%;
+    padding: var(--closeHamIconPadding);
 }
 .navButtons{
     display: flex;
     align-items: center;
     gap: .5rem;
     padding: .1rem 1.1rem .1rem 1.1rem;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    box-shadow:var(--navButtonsBoxShadow);
     margin: 0 1rem 0 1rem;
     border-radius: var(--bordRad10px);
     color: var(--blackCol);   /*později je pouzivana modra barva pro <a> ... zde je fixne cerna aby ji nic neprepsalo*/
@@ -132,7 +146,7 @@ p{
 }
 .navButtons:hover{
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow: var(--navButtonsBoxShadowHover);
 }
 
 .section1_bgHomeVid{
@@ -142,7 +156,7 @@ p{
     overflow: hidden;
     width: 90%;
     height: 63rem;
-    margin: 2rem 0rem 0rem 0;
+    margin: var(--topMargin2remUnderNavbar); 
     border-radius: var(--bordRad10px);
 }
 video{
@@ -160,20 +174,20 @@ video{
     flex-direction: column;    
     align-items: center;
     position: absolute;
-    row-gap: 1rem;
+    gap: var(--gapStandard1rem);
     top: 20rem;  /*absolutní pozicování videoCard ramecku nad bgVideem*/
     right: 25rem;
-    padding: .5rem 2rem 3.2rem 2rem;
-    height: 30%;
+    padding: var(--vCardPadding);
+    height: 28%;
     width: 400px;
-    -webkit-backdrop-filter: blur(10px) saturate(180%);
-    backdrop-filter: blur(10px) saturate(180%);
-    background-color: rgba(255,255,255,.5);
-    box-shadow: 0 1rem 2rem rgba(0,0,0,.3);
+    -webkit-backdrop-filter: var(--vCardBGFilter);
+    backdrop-filter: var(--vCardBGFilter);
+    background-color:var(--vCardBGCol);
+    box-shadow: var(--vCardBoxShadow);
     border-radius: 1rem;
     color: rgba(0, 0, 0, .7);
     font-weight: bold;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: var(--fontsVCard);
 }   
 
 .vidCardTitle{
@@ -184,7 +198,7 @@ video{
     font-size: 30px;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: var(--gapStandard1rem);
 }
 .containerTextEmojiCard img{
     width: 3rem;
@@ -206,7 +220,7 @@ video{
 .arrowImageVideoCardWrapper{
     display: flex;
     justify-content: center;
-    column-gap: 1rem;
+    gap: var(--gapStandard1rem);
 }
 .arrowImageVideoCardWrapper img{
     width: 20rem;
@@ -233,7 +247,7 @@ video{
 .vidCardImg{
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: var(--gapStandard1rem);
 }
 .bodyArrowDown{
     margin: 2rem 0 0 0;
@@ -247,11 +261,11 @@ video{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem 1rem;
+    gap: var(--gapStandard1rem);
 }
 .section2_tile{
     position: relative;
-    padding: 1rem;
+    padding: var(--standardPadding1rem);
     box-shadow: var(--section2TilesShadow);
     border-radius: var(--bordRad10px);
     width: 18rem;
@@ -343,7 +357,7 @@ a{
   box-shadow: var(--section2TilesShadow);
   padding: 3rem;
   border-radius: var(--bordRad10px);
-  outline: solid rgba(255,255,255,.5);
+  outline: var(--overlayOutline);
 }
 
 
@@ -357,7 +371,7 @@ a{
 }
 
 .ssection2_Tab_Overlay a:hover, .section2_Tab_Overlay a:focus {
-  color: #f1f1f1;
+  color: var(--closeBTNFocusAOverlay);
 }
 
 .section2_Tab_Overlay .Section2_Tab_Overlayclosebtn {
@@ -470,7 +484,7 @@ a{
   transform: translateY(50%)
     translateY(
       calc(
-        (var(--size) * 0.4) /*vertikalni posun je size * konstanta 0.4, která byla tak akorát*/
+        (var(--size) * 0.4) /*vertikalni posun je size * konstanta 0.4*/
       )
     )
     translateY(calc(var(--hover, 0) * (var(--size) * -0.4)));
@@ -484,7 +498,6 @@ a{
   cursor: pointer;
 }
 .section3_cardAnimation img {  /*aby logo kucharky/receptu v tom flybuttonu nezabiralo cely span*/
-  aspect-ratio: 1;
   width: 90%;
 }
 .section3_cardAnimation img:active{
@@ -581,10 +594,8 @@ a{
 .topNav{
     gap: 0;
 }
-  
+
 }  
-
-
 footer{
     display: flex;
     top: 3rem;
@@ -627,7 +638,7 @@ footer .LeftText h3{
 }
 .footerSocialIconBlurOverlay{
     top: -1rem;
-    padding: 1rem;
+    padding: var(--standardPadding1rem);
     left: 0;
     position: absolute;
     width: 100%;

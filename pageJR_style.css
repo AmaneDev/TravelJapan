@@ -26,6 +26,9 @@
     --navBarLineHeight: 1.8rem;
     --hoverScaleLower: 1.1;
     --hoverTransition: .2s ease-in;
+    --closeHamIconPadding: .5rem 1rem .5rem 1rem;
+    --navButtonsBoxShadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    --navButtonsBoxShadowHover:  rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 body{
     min-height: 100vh;
@@ -82,7 +85,7 @@ h1{
     align-items: center;
     gap: .5rem;
     padding: .1rem 1.1rem .1rem 1.1rem;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    box-shadow: var(--navButtonsBoxShadow);
     margin: 0 1rem 0 1rem;
     border-radius: var(--bordRad10px);
     color: var(--blackCol);   /*později je pouzivana modra barva pro <a> ... zde je fixne cerna aby ji nic neprepsalo*/
@@ -118,7 +121,7 @@ h1{
 }
 .hamburgerItemsSidebar .closeHamIcon{
     width:8%;
-    height: 6%;
+    padding: var(--closeHamIconPadding);
 }
 .navB_JR{
     text-decoration: underline;
@@ -140,7 +143,7 @@ h1{
 }
 .navButtons:hover{
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow: var(--navButtonsBoxShadowHover);
 }
 .goBackBtnBurger{
     width: 8%;
